@@ -16,6 +16,7 @@ module.exports = function (bundler) {
 
   bundler.on('bundled', () => {
     let cache;
+    let deDupeCache = [];
     try {
       cache = jsonfile.readFileSync(constFile.cacheFile);
     } catch (e) {
@@ -26,7 +27,10 @@ module.exports = function (bundler) {
       logger.clear();
     }
     cache.log.forEach(element => {
-      logger.write(element);
+      if (deDupeCache.indexOf(element) === -1) {
+        logger.write(element);
+        deDupeCache.push(element);
+      }
     });
 
     jsonfile.writeFileSync(constFile.cacheFile, {});
