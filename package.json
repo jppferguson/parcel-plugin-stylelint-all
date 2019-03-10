@@ -1,0 +1,26 @@
+{
+  "name": "parcel-plugin-stylelint-all",
+  "version": "0.1.0",
+  "description": "Stylelint support for Parcel bundler",
+  "repository": "https://github.com/jppferguson/parcel-plugin-stylelint-all.git",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "rm -rf .cache && rm -rf dist && DEBUG=\"parcel-plugin-stylelint-all:*\" node test/index.js"
+  },
+  "author": "jppferguson",
+  "license": "ISC",
+  "devDependencies": {
+    "debug": "^4.1.1",
+    "jsonfile": "^5.0.0",
+    "less": "^3.9.0",
+    "parcel-bundler": "^1.12.0",
+    "sass": "^1.17.2",
+    "stylelint": "^9.10.1",
+    "stylelint-config-standard": "^18.2.0",
+    "stylus": "^0.54.5"
+  }
+}
