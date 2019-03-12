@@ -7,7 +7,10 @@
   "bugs": "https://github.com/jppferguson/parcel-plugin-stylelint-all/issues",
   "main": "index.js",
   "scripts": {
-    "test": "rm -rf .cache && rm -rf dist && DEBUG=\"parcel-plugin-stylelint-all:*\" node test/index.js"
+    "clean": "rm -rf .cache && rm -rf dist",
+    "debug": "npm run clean && DEBUG=\"parcel-plugin-stylelint-all:*\" node test/index.js",
+    "lint": "eslint .",
+    "test": "npm run lint"
   },
   "author": {
     "name": "Jamie Ferguson",
@@ -29,5 +32,12 @@
     "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.2.0",
     "stylus": "^0.54.5"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.15.1",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "prettier": "^1.16.4"
   }
 }

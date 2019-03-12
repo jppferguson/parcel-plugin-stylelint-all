@@ -5,7 +5,7 @@ const constFile = require('./src/const');
 
 mkdirp.sync(constFile.cacheDir);
 
-module.exports = function (bundler) {
+module.exports = bundler => {
   jsonfile.writeFileSync(constFile.cacheFile, {});
 
   bundler.addAssetType('css', require.resolve('./src/StyleLintCssAsset'));
