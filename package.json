@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf .cache && rm -rf dist",
-    "debug": "npm run clean && DEBUG=\"parcel-plugin-stylelint-all:*\" node test/index.js",
+    "debug": "npm run clean && DEBUG=\"parcel-plugin-stylelint-all:*\" nodemon test/index.js",
     "lint": "eslint .",
     "test": "npm run lint"
   },
@@ -38,6 +38,7 @@
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-prettier": "^3.1.3",
+    "nodemon": "^2.0.3",
     "prettier": "^2.0.4"
   }
 }
