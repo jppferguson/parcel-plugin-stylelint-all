@@ -1,12 +1,19 @@
+const Debug = require('debug');
 const Linter = require('./Linter');
 
-const lintAll = (dependencies, syntax) => {
-  const cache = [];
+const lintAll = (filename, dependencies, syntax) => {
+  let ownDebugger = Debug(`parcel-plugin-stylelint-all:${syntax}`);
+
+  ownDebugger('before parse do stylelint.');
+
+  const allFiles = [filename];
   dependencies.forEach((dep) => {
-    if (!cache.includes(dep.name)) {
-      cache.push(dep.name);
-      Linter(undefined, dep.name, syntax);
+    if (!allFiles.includes(dep.name)) {
+      allFiles.push(dep.name);
     }
+  });
+  allFiles.forEach((file) => {
+    Linter(file, syntax, ownDebugger);
   });
 };
 

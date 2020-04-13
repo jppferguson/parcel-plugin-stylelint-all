@@ -1,16 +1,12 @@
+const fs = require('fs');
 const stylelint = require('stylelint');
 const jsonfile = require('jsonfile');
 const constFile = require('./const');
-const Debug = require('debug');
 
-const Linter = (code, codeFilename, syntax) => {
-  let ownDebugger = Debug(`parcel-plugin-stylelint-all:${syntax}`);
-
-  ownDebugger('before parse do stylelint.');
-
+const Linter = (codeFilename, syntax, ownDebugger) => {
   stylelint
     .lint({
-      code,
+      files: [codeFilename],
       codeFilename,
       formatter: 'string',
       syntax,

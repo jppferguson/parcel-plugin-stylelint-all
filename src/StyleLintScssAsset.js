@@ -5,7 +5,7 @@ class StyleLintScssAsset extends SASSAsset {
   async load() {
     let code = await super.load();
     this.getDependencies().then(() => {
-      lintAll(this.dependencies, 'scss');
+      lintAll(this.name, this.dependencies, 'scss');
     });
     return code;
   }

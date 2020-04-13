@@ -1,11 +1,12 @@
 const SSSAsset = require('parcel-bundler/src/assets/SSSAsset');
-const Linter = require('./Linter');
+const lintAll = require('./lintAll');
 
 class StyleLintSSSAsset extends SSSAsset {
   async load() {
     let code = await super.load();
-    let codeFilename = this.name;
-    Linter(code, codeFilename, 'sugarss');
+    this.getDependencies().then(() => {
+      lintAll(this.name, this.dependencies, 'sugarss');
+    });
     return code;
   }
 }

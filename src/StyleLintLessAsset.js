@@ -1,11 +1,12 @@
 const LESSAsset = require('parcel-bundler/src/assets/LESSAsset');
-const Linter = require('./Linter');
+const lintAll = require('./lintAll');
 
 class StyleLintLessAsset extends LESSAsset {
   async load() {
     let code = await super.load();
-    let codeFilename = this.name;
-    Linter(code, codeFilename, 'less');
+    this.getDependencies().then(() => {
+      lintAll(this.name, this.dependencies, 'less');
+    });
     return code;
   }
 }
