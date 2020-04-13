@@ -10,6 +10,7 @@
     "clean": "rm -rf .cache && rm -rf dist",
     "debug": "npm run clean && DEBUG=\"parcel-plugin-stylelint-all:*\" nodemon test/index.js",
     "lint": "eslint .",
+    "lint:styles": "stylelint examples/main.scss",
     "test": "npm run lint"
   },
   "author": {
