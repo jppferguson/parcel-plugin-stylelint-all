@@ -13,9 +13,9 @@ const Linter = (code, codeFilename, syntax) => {
       code,
       codeFilename,
       formatter: 'string',
-      syntax
+      syntax,
     })
-    .then(resultObject => {
+    .then((resultObject) => {
       if (!resultObject.ignored) {
         let ret = resultObject.output;
 
@@ -32,7 +32,7 @@ const Linter = (code, codeFilename, syntax) => {
         }
       }
     })
-    .catch(err => {
+    .catch((err) => {
       ownDebugger(err.message);
     });
 };

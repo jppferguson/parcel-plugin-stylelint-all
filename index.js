@@ -5,7 +5,7 @@ const constFile = require('./src/const');
 
 mkdirp.sync(constFile.cacheDir);
 
-module.exports = bundler => {
+module.exports = (bundler) => {
   jsonfile.writeFileSync(constFile.cacheFile, {});
 
   bundler.addAssetType('css', require.resolve('./src/StyleLintCssAsset'));
@@ -26,7 +26,7 @@ module.exports = bundler => {
     if (cache.log.length) {
       logger.clear();
     }
-    cache.log.forEach(element => {
+    cache.log.forEach((element) => {
       if (deDupeCache.indexOf(element) === -1) {
         logger.write(element);
         deDupeCache.push(element);
