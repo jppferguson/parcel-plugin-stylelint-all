@@ -2,8 +2,8 @@
 
 [![NPM version][npm-image]][npm-url]
 [![Dependency Status][david-image]][david-url]
-[![GitHub tag](github-tags-image)](github-tags-url)
-[![GitHub issues](github-issues-image)](github-issues-url)
+[![GitHub tag][github-tags-image]][github-tags-url]
+[![GitHub issues][github-issues-image]][github-issues-url]
 
 **Make Parcel support StyleLint.**
 
@@ -22,7 +22,7 @@ npm install parcel-plugin-stylelint-all --save-dev
 ```
 
 [css-url]: https://www.w3.org/Style/CSS/Overview.en.html
-[david-image]: http://img.shields.io/david/jppferguson/parcel-plugin-stylelint-all.svg?style=flat-square
+[david-image]: https://img.shields.io/david/jppferguson/parcel-plugin-stylelint-all.svg?style=flat-square
 [david-url]: https://david-dm.org/jppferguson/parcel-plugin-stylelint-all
 [github-issues-image]: https://img.shields.io/github/issues/jppferguson/parcel-plugin-stylelint-all.svg?style=flat-square
 [github-issues-url]: https://github.com/jppferguson/parcel-plugin-stylelint-all/issues
